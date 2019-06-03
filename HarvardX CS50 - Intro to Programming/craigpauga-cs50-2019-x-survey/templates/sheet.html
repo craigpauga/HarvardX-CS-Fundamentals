@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <ul>
+        {% for person in people %}
+            <li>{{ person[0] }} from {{ person[1] }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

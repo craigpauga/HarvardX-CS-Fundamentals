@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <h1>Your Transaction History</h1>
+    <table class="darkTable" style="width:100%">
+      <tr>
+        <th>Symbol</th>
+        <th>Price at Transaction</th>
+        <th>Quantity</th>
+        <th>Value Transacted</th>
+        <th>Date of Transaction</th>
+      </tr>
+      {% for row in rows %}
+      <tr>
+
+        <td>{{ row['symbol'] }}</td>
+        <td>{{ row['price'] }}</td>
+        <td>{{ row['quantity'] }}</td>
+        <td>{{ row['total'] }}</td>
+        <td>{{ row['date'] }}</td>
+      </tr>
+      {% endfor %}
+
+    </table>
+{% endblock %}

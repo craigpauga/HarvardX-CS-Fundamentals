@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post">
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            </div>
+          </div>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Preferred Magic</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+                  <label class="form-check-label" for="gridRadios1">
+                    Dragon
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                  <label class="form-check-label" for="gridRadios2">
+                    Giant
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                  <label class="form-check-label" for="gridRadios3">
+                    WhiteWalker
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group row">
+            <div class="col-sm-2">Favorite House</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                  <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                      <select class="custom-select mr-sm-2" name="house" id="house">
+                        <option selected>Choose...</option>
+                        <option value="1">Lannister</option>
+                        <option value="2">Stark</option>
+                        <option value="3">Tyrell</option>
+                      </select>
+              </div>
+            </div>
+          </div>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+
+        document.querySelector('form').onsubmit = function() {
+            if (!document.querySelector('#email').value) {
+                alert('You must provide your email');
+                return false;
+            }
+            else if (!document.querySelector('#password').value) {
+                alert('You must provide your password');
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+
+{% endblock %}

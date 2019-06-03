@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <h1>Your Stock Summary</h1>
+    <table style="width:100%">
+        <tr>
+            <th>Cash Remaining</th>
+            <th>Total Holdings</th>
+        </tr>
+        <tr>
+            <td>{{ cash }}</td>
+            <td>{{ holdings }}</td>
+        </tr>
+    <table class="darkTable" style="width:100%">
+      <tr>
+        <th>Stock Name</th>
+        <th>Symbol</th>
+        <th>Current Price</th>
+        <th>Shares Owned</th>
+        <th>Holding Value</th>
+      </tr>
+      {% for i in info %}
+      <tr>
+
+        <td>{{ i[0] }}</td>
+        <td>{{ i[1] }}</td>
+        <td>{{ i[2] }}</td>
+        <td>{{ i[3] }}</td>
+        <td>{{ i[4] }}</td>
+      </tr>
+      {% endfor %}
+
+    </table>
+{% endblock %}
